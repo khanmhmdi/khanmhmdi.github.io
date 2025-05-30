@@ -1,7 +1,7 @@
 ---
 title:          "Improving spleen segmentation in ultrasound images using a hybrid deep learning framework"
 date:           2024-01-21 00:01:00 +0800
-selected:       false
+selected:       True
 pub:            "Nature Publishing Group UK - Scientific Reports"
 pub_date:       "2024"
 abstract: >-
