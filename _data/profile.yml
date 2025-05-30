@@ -3,7 +3,7 @@ secondary_name: "Bryan Khanmohamadi"
 navbar_name: "Your Name"
 
 positions:
-- logo: /assets/images/Sbu-logo.png  # Logo is optional
+- logo: /assets/images/Sbu.png  # Logo is optional
   name: Bachelor of Computer science
 
 email: "your@email.com"
