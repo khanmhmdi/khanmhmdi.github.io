@@ -3,7 +3,7 @@ secondary_name: "Bryan Khanmohamadi"
 navbar_name: "Bryan Khanmohamadi"
 
 positions:
-- logo: /assets/images/badges/download.png
+- logo: https://github.com/khanmhmdi/khanmhmdi.github.io/blob/main/assets/images/badges/download.png
   name: B.Sc. in Computer Science, Shahid Beheshti University (SBU)
 
 email: "khanmhmdi.mhmdrza@gmail.com"
