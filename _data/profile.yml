@@ -3,7 +3,7 @@ secondary_name: "Bryan Khanmohamadi"
 navbar_name: "Bryan Khanmohamadi"
 
 positions:
-- logo: /assets/images/Sbu-logo.png
+- logo: /assets/images/badges/download.png
   name: B.Sc. in Computer Science, Shahid Beheshti University (SBU)
 
 email: "khanmhmdi.mhmdrza@gmail.com"
@@ -21,13 +21,13 @@ short_bio: >-
     I am particularly passionate about deploying scalable AI systems for real-time applications, and my work spans probabilistic modeling, symbolic mathematics using GNNs, and active learning. I also contribute as a teaching assistant in Data Science and Deep Learning courses.
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
+portrait_url: /assets/images/badges/download.png
 portrait_caption: >-
   Photo by Manja Vitolic on Unsplash
 
 education:
 - name: Shahid Beheshti University
-  logo: /assets/images/Sbu-logo.png
+  logo: /assets/images/badges/download.png
   position: >- 
     Department of Computer Science <br/>
     B.Sc. in Computer Science <br/>
