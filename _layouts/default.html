@@ -368,6 +368,134 @@
             margin-left: 0.5rem;
         }
 
+        /* Timeline Styles */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--highlight-color), var(--accent-color));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            animation: fadeInUp 1s ease-out backwards;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--highlight-color);
+            border-radius: 50%;
+            top: 0;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+            z-index: 1;
+        }
+
+        .timeline-item.left .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item.right .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: var(--highlight-color);
+        }
+
+        .timeline-content h3 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-content h4 {
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-supervisors {
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .timeline-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--highlight-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Responsive Timeline */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px !important;
+                padding-right: 1rem !important;
+                text-align: left !important;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-dot {
+                left: 20px !important;
+                right: auto !important;
+            }
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -431,6 +559,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -487,6 +616,46 @@
                 <div class="award-item">
                     <h3>Ranked Top 1% in National University Entrance Exam (Iran)</h3>
                     <p class="date">2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2 class="section-title">Research Experience</h2>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Remote Research Collaboration</h3>
+                    <h4>UCLA</h4>
+                    <p class="timeline-supervisors">Supervisors: Dr. Nader Sehatbakhsh, Dr. Farshad Firouzi</p>
+                    <p class="timeline-description">Working on distributed inference of Mixture of Experts (MoE) for edge computing and adaptive real-time video segmentation.</p>
+                    <span class="timeline-date">Nov 2024 – Present</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Computer Vision Researcher</h3>
+                    <h4>University of Tehran - Applied Artificial Intelligence Lab (AAIL)</h4>
+                    <p class="timeline-supervisors">Supervisor: Prof. Mohammad Ali Akhaee</p>
+                    <p class="timeline-description">Developed interactive segmentation models with RLHF using Deep Deterministic Policy Gradient (DDPG) on BRATS dataset.</p>
+                    <span class="timeline-date">Nov 2022 – Jan 2025</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Research Internship</h3>
+                    <h4>Computational Mathematics and AI Lab, SBU</h4>
+                    <p class="timeline-supervisors">Supervisor: Prof. Kourosh Parand</p>
+                    <p class="timeline-description">Designed Graph Neural Networks to solve symbolic mathematics problems, achieving 81% accuracy.</p>
+                    <span class="timeline-date">May 2022 – Sep 2022</span>
                 </div>
             </div>
         </div>
