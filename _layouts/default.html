@@ -1,320 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dr. Academic Name - Test Page</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamadreza Khanmohamadi - Computer Vision & AI Researcher</title>
     <style>
-        /* LUXURY ACADEMIC COLOR SCHEME */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-          --primary-navy: #2c3e50;
-          --primary-navy-light: #34495e;
-          --primary-navy-dark: #1a252f;
-          
-          --accent-gold: #d4af37;
-          --accent-gold-light: #f4e4bc;
-          --accent-rose-gold: #e8b4a0;
-          --accent-sage: #9caf88;
-          
-          --bg-primary: #fefefe;
-          --bg-secondary: #f8f9fa;
-          --bg-tertiary: #f4f6f8;
-          --bg-card: #ffffff;
-          --bg-accent: #faf8f5;
-          
-          --text-primary: #2c3e50;
-          --text-secondary: #5a6c7d;
-          --text-muted: #8e9aaf;
-          --text-light: #ffffff;
-          
-          --border-light: #e8ecf0;
-          --border-medium: #d1d9e0;
-          --divider: #f0f4f7;
-          
-          --shadow-soft: rgba(44, 62, 80, 0.08);
-          --shadow-medium: rgba(44, 62, 80, 0.12);
-          --shadow-strong: rgba(44, 62, 80, 0.16);
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --highlight-color: #e94560;
+            --text-light: #eee;
+            --text-dark: #333;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
         body {
-          background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-          color: var(--text-primary);
-          font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          line-height: 1.6;
-          min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0a0a0a;
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .navbar {
-          background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-accent) 100%) !important;
-          backdrop-filter: blur(10px);
-          border-bottom: 1px solid var(--border-light);
-          box-shadow: 0 2px 20px var(--shadow-soft);
+        /* Animated Background */
+        .background-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a2e);
+            overflow: hidden;
         }
 
-        .navbar-brand {
-          color: var(--primary-navy) !important;
-          font-weight: 700;
-          font-size: 1.4rem;
+        .background-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
         }
 
-        .navbar-nav .nav-link {
-          color: var(--text-secondary) !important;
-          font-weight: 500;
-          padding: 0.8rem 1.2rem !important;
-          border-radius: 8px;
-          transition: all 0.3s ease;
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-          color: var(--primary-navy) !important;
-          background: var(--accent-gold-light);
-          transform: translateY(-1px);
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
         }
 
-        .container-lg,
-        .container {
-          background: var(--bg-card);
-          border-radius: 16px;
-          box-shadow: 0 8px 32px var(--shadow-soft);
-          margin-top: 2rem;
-          margin-bottom: 2rem;
-          padding: 3rem 2rem;
-          border: 1px solid var(--border-light);
+        nav.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
-        h1, h2, h3, h4, h5, h6 {
-          color: var(--primary-navy);
-          font-family: 'Raleway', sans-serif;
-          font-weight: 600;
-          margin-bottom: 1.5rem;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        h1 {
-          font-size: 2.8rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, var(--primary-navy) 0%, var(--accent-sage) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        h2 {
-          font-size: 2.2rem;
-          color: var(--primary-navy);
-          border-bottom: 3px solid var(--accent-gold-light);
-          padding-bottom: 0.5rem;
-          margin-bottom: 2rem;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        h3 {
-          font-size: 1.6rem;
-          color: var(--primary-navy-light);
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
-        p {
-          color: var(--text-secondary);
-          font-size: 1.1rem;
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--highlight-color);
+            transition: width 0.3s ease;
         }
 
-        .card {
-          background: var(--bg-card);
-          border: 1px solid var(--border-light);
-          border-radius: 12px;
-          box-shadow: 0 4px 24px var(--shadow-soft);
-          transition: all 0.3s ease;
-          overflow: hidden;
-          margin-bottom: 2rem;
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
-        .card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 32px var(--shadow-medium);
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
         }
 
-        .card-header {
-          background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--bg-accent) 100%);
-          border-bottom: 1px solid var(--border-light);
-          color: var(--primary-navy);
-          font-weight: 600;
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .card-body {
-          background: var(--bg-card);
-          padding: 2rem;
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
         }
 
-        .btn-primary {
-          background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-rose-gold) 100%);
-          border: none;
-          border-radius: 8px;
-          padding: 0.75rem 2rem;
-          font-weight: 600;
-          color: white;
-          box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
-          transition: all 0.3s ease;
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--highlight-color);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-          background: linear-gradient(135deg, var(--accent-rose-gold) 0%, var(--accent-gold) 100%);
+        .hero-bio {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
 
-        .highlight-box {
-          background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--bg-accent) 100%);
-          border: 1px solid var(--accent-gold);
-          border-radius: 12px;
-          padding: 2rem;
-          margin: 2rem 0;
-          box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
         }
 
-        .social-links a {
-          color: var(--text-secondary);
-          font-size: 1.5rem;
-          margin: 0 1rem;
-          transition: all 0.3s ease;
-          text-decoration: none;
+        .hero-link {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .social-links a:hover {
-          color: var(--accent-gold);
-          transform: translateY(-2px);
-          text-decoration: none;
+        .hero-link:hover {
+            background: var(--highlight-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
         }
 
+        .hero-image {
+            position: relative;
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .education-item, .award-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover, .award-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--highlight-color);
+        }
+
+        .education-item h3, .award-item h3 {
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .date, .award-item .date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Publications */
+        .publications-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 250px;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--highlight-color);
+        }
+
+        .publication-image {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .publication-card:hover .publication-image::after {
+            opacity: 1;
+        }
+
+        .publication-content {
+            padding: 2rem;
+        }
+
+        .publication-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .publication-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-venue {
+            color: var(--highlight-color);
+            font-weight: 500;
+        }
+
+        .publication-date {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .publication-abstract {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .publication-authors {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .publication-link {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            background: var(--highlight-color);
+            transform: scale(1.05);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Footer */
         footer {
-          background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
-          color: var(--text-light);
-          padding: 3rem 0;
-          margin-top: 4rem;
-          border-top: 4px solid var(--accent-gold);
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 4rem;
         }
 
-        footer a {
-          color: var(--accent-gold-light);
-          transition: color 0.3s ease;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        footer a:hover {
-          color: var(--accent-gold);
-          text-decoration: none;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-card {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-image {
+                height: 200px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Dr. Academic Name</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Teaching</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="background-animation"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Khanmohamadi</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main role="main" class="page-content" style="margin-top: 100px;">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1>Welcome to My Academic Profile</h1>
-                    <p>This is a test page demonstrating the new luxury color scheme for your academic website. The colors have been carefully selected to create a sophisticated, professional appearance while maintaining excellent readability.</p>
-                    
-                    <h2>Research Interests</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    
-                    <div class="highlight-box">
-                        <h3>Featured Research</h3>
-                        <p>This highlighted section demonstrates the accent colors and styling used throughout the design. Notice the subtle gradient and golden accent border.</p>
-                    </div>
-                    
-                    <h3>Recent Publications</h3>
-                    <div class="card">
-                        <div class="card-header">
-                            Latest Paper (2024)
-                        </div>
-                        <div class="card-body">
-                            <p>"Advanced Research in Academic Excellence" - Journal of Academic Studies, Vol. 42, Issue 3</p>
-                            <button type="button" class="btn btn-primary">Read More</button>
-                        </div>
-                    </div>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Mohamadreza Khanmohamadi</h1>
+                <h2>Computer Vision & AI Researcher</h2>
+                <div class="hero-bio">
+                    <p>I am a deep learning and computer vision researcher, currently completing my B.Sc. in Computer Science at Shahid Beheshti University. My research focuses on interactive segmentation, distributed inference for Mixture-of-Experts models, and Reinforcement Learning from Human Feedback (RLHF). I have collaborated with academic institutions such as UCLA and the University of Tehran, and contributed to several publications in top venues like IEEE COINS and Springer Nature journals.</p>
+                    <p>I am particularly passionate about deploying scalable AI systems for real-time applications, and my work spans probabilistic modeling, symbolic mathematics using GNNs, and active learning. I also contribute as a teaching assistant in Data Science and Deep Learning courses.</p>
                 </div>
-                
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            Quick Links
-                        </div>
-                        <div class="card-body">
-                            <div class="social-links text-center">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-google-scholar"></i></a>
-                                <a href="#"><i class="fab fa-orcid"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            Contact Information
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Email:</strong> name@university.edu</p>
-                            <p><strong>Office:</strong> Building 123, Room 456</p>
-                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                        </div>
-                    </div>
+                <div class="hero-links">
+                    <a href="mailto:khanmhmdi.mhmdrza@gmail.com" class="hero-link">Email</a>
+                    <a href="https://scholar.google.com/citations?user=6RX9SfYAAAAJ&hl=en" class="hero-link">Google Scholar</a>
+                    <a href="https://github.com/khanmhmdi" class="hero-link">GitHub</a>
+                    <a href="https://twitter.com/khanmohamadi81" class="hero-link">Twitter</a>
+                    <a href="https://linkedin.com/in/khanmhmdi" class="hero-link">LinkedIn</a>
                 </div>
             </div>
+            <div class="hero-image">
+                <img src="/assets/images/badges/download.png" alt="Mohamadreza Khanmohamadi">
+            </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="text-center">
-                <p>&copy; 2024 Dr. Academic Name. All rights reserved.</p>
-                <p>Built with <a href="#">Academic Template</a></p>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="education">
+                <h3 style="color: var(--highlight-color); margin-bottom: 1.5rem;">Education</h3>
+                <div class="education-item">
+                    <h3>Shahid Beheshti University</h3>
+                    <p>Department of Computer Science<br>
+                    B.Sc. in Computer Science<br>
+                    GPA: 3.76/4 (Top 3 of 55 students)<br>
+                    Thesis: Design and Implementation of RLHF System for Interactive Segmentation</p>
+                    <p class="date">Sept. 2020 – Dec. 2024</p>
+                </div>
+            </div>
+            <div class="awards">
+                <h3 style="color: var(--highlight-color); margin-bottom: 1.5rem;">Awards & Achievements</h3>
+                <div class="award-item">
+                    <h3>Best Paper Nomination – IEEE COINS</h3>
+                    <p class="date">2024</p>
+                </div>
+                <div class="award-item">
+                    <h3>1st Place, Innotech AI Competition (Fraud Detection)</h3>
+                    <p class="date">2023</p>
+                </div>
+                <div class="award-item">
+                    <h3>Ranked Top 1% in National University Entrance Exam (Iran)</h3>
+                    <p class="date">2020</p>
+                </div>
             </div>
         </div>
+    </section>
+
+    <section id="publications">
+        <h2 class="section-title">Publications</h2>
+        <div class="publications-grid">
+            <div class="publication-card">
+                <div class="publication-image" style="background-image: url('/assets/images/covers/cover1.jpg')"></div>
+                <div class="publication-content">
+                    <h3 class="publication-title">DETR-SAM: Automated Few-Shot Segmentation with Detection Transformer and Keypoint Matching</h3>
+                    <div class="publication-meta">
+                        <span class="publication-venue">IEEE-COINS</span>
+                        <span class="publication-date">2024</span>
+                    </div>
+                    <p class="publication-abstract">Few-shot Segmentation (FSS) aims to segment objects in an image using only a few annotated examples. The Segment Anything Model (SAM) has recently gained attention in FSS due to its versatility and capability to handle various segmentation tasks with prompts...</p>
+                    <p class="publication-authors">Mohamadreza Khanmohamadi*, Bahar Farahani*</p>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10622658/" class="publication-link">Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-image" style="background-image: url('/assets/images/covers/cover2.jpg')"></div>
+                <div class="publication-content">
+                    <h3 class="publication-title">Improving spleen segmentation in ultrasound images using a hybrid deep learning framework</h3>
+                    <div class="publication-meta">
+                        <span class="publication-venue">Nature Publishing Group UK - Scientific Reports</span>
+                        <span class="publication-date">2024</span>
+                    </div>
+                    <p class="publication-abstract">This paper introduces a novel method for spleen segmentation in ultrasound images, using a two-phase training approach. In the first phase, the SegFormerB0 network is trained to provide an initial segmentation...</p>
+                    <p class="publication-authors">Ali Karimi*, Javad Seraj*, Fatemeh Mirzadeh Sarcheshmeh, Kasra Fazli, Amirali Seraj, Parisa Eslami, Mohamadreza Khanmohamadi*, et al.</p>
+                    <div class="publication-links">
+                        <a href="https://www.nature.com/articles/s41598-025-85632-9" class="publication-link">Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-image" style="background-image: url('/assets/images/covers/cover3.jpg')"></div>
+                <div class="publication-content">
+                    <h3 class="publication-title">Smooth Adaptive Saliency-Based Training Endoscopy Images Classification<span class="badge">Spotlight</span></h3>
+                    <div class="publication-meta">
+                        <span class="publication-venue">Under review - Discover Artificial Intelligence (Springer)</span>
+                        <span class="publication-date">2024</span>
+                    </div>
+                    <p class="publication-abstract">In the realm of artificial intelligence (AI), a significant challenge is the prevailing lack of trust, particularly stemming from the opacity of how these models operate. This issue becomes especially critical in the medical domain...</p>
+                    <p class="publication-authors">Amirsadegh Roshanzamira, Mohamadreza Khanmohamadi, Kasra Fazli Zaman Abadib, Giti Javidic, Ehsan Sheybanic</p>
+                    <div class="publication-links">
+                        <a href="https://github.com/luost26/academic-homepage" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-image" style="background-image: url('/assets/images/covers/cover3.jpg')"></div>
+                <div class="publication-content">
+                    <h3 class="publication-title">Design and implementation of a novel RLHF system for glioma interactive segmentation<span class="badge">Spotlight</span></h3>
+                    <div class="publication-meta">
+                        <span class="publication-venue">Bachelor Thesis</span>
+                        <span class="publication-date">2024</span>
+                    </div>
+                    <p class="publication-abstract">The goal of brain tumor segmentation is to aid in surgical planning. Traditional medical approaches focus on cellular differences, while AI methods, especially deep learning, process medical images...</p>
+                    <p class="publication-authors">Mohamadreza Khanmohamadi</p>
+                    <div class="publication-links">
+                        <a href="https://github.com/luost26/academic-homepage" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 Mohamadreza Khanmohamadi. All rights reserved.</p>
+        <p>Contact: <a href="mailto:khanmhmdi.mhmdrza@gmail.com" style="color: var(--highlight-color);">khanmhmdi.mhmdrza@gmail.com</a></p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.publication-card, .education-item, .award-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
