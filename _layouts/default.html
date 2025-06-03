@@ -1,61 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Template: https://github.com/luost26/academic-homepage -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ page.title }} - {{ site.data.profile.navbar_name }}</title>
+    <title>Dr. Academic Name - Test Page</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
-    <!-- You'll need to create these favicon images and place them in /assets/img/ -->
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+    <style>
+        /* LUXURY ACADEMIC COLOR SCHEME */
+        :root {
+          --primary-navy: #2c3e50;
+          --primary-navy-light: #34495e;
+          --primary-navy-dark: #1a252f;
+          
+          --accent-gold: #d4af37;
+          --accent-gold-light: #f4e4bc;
+          --accent-rose-gold: #e8b4a0;
+          --accent-sage: #9caf88;
+          
+          --bg-primary: #fefefe;
+          --bg-secondary: #f8f9fa;
+          --bg-tertiary: #f4f6f8;
+          --bg-card: #ffffff;
+          --bg-accent: #faf8f5;
+          
+          --text-primary: #2c3e50;
+          --text-secondary: #5a6c7d;
+          --text-muted: #8e9aaf;
+          --text-light: #ffffff;
+          
+          --border-light: #e8ecf0;
+          --border-medium: #d1d9e0;
+          --divider: #f0f4f7;
+          
+          --shadow-soft: rgba(44, 62, 80, 0.08);
+          --shadow-medium: rgba(44, 62, 80, 0.12);
+          --shadow-strong: rgba(44, 62, 80, 0.16);
+        }
+
+        body {
+          background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+          color: var(--text-primary);
+          font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          line-height: 1.6;
+          min-height: 100vh;
+        }
+
+        .navbar {
+          background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-accent) 100%) !important;
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid var(--border-light);
+          box-shadow: 0 2px 20px var(--shadow-soft);
+        }
+
+        .navbar-brand {
+          color: var(--primary-navy) !important;
+          font-weight: 700;
+          font-size: 1.4rem;
+        }
+
+        .navbar-nav .nav-link {
+          color: var(--text-secondary) !important;
+          font-weight: 500;
+          padding: 0.8rem 1.2rem !important;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+          color: var(--primary-navy) !important;
+          background: var(--accent-gold-light);
+          transform: translateY(-1px);
+        }
+
+        .container-lg,
+        .container {
+          background: var(--bg-card);
+          border-radius: 16px;
+          box-shadow: 0 8px 32px var(--shadow-soft);
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          padding: 3rem 2rem;
+          border: 1px solid var(--border-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          color: var(--primary-navy);
+          font-family: 'Raleway', sans-serif;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+        }
+
+        h1 {
+          font-size: 2.8rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, var(--primary-navy) 0%, var(--accent-sage) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+          color: var(--primary-navy);
+          border-bottom: 3px solid var(--accent-gold-light);
+          padding-bottom: 0.5rem;
+          margin-bottom: 2rem;
+        }
+
+        h3 {
+          font-size: 1.6rem;
+          color: var(--primary-navy-light);
+        }
+
+        p {
+          color: var(--text-secondary);
+          font-size: 1.1rem;
+          line-height: 1.7;
+          margin-bottom: 1.5rem;
+        }
+
+        .card {
+          background: var(--bg-card);
+          border: 1px solid var(--border-light);
+          border-radius: 12px;
+          box-shadow: 0 4px 24px var(--shadow-soft);
+          transition: all 0.3s ease;
+          overflow: hidden;
+          margin-bottom: 2rem;
+        }
+
+        .card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 32px var(--shadow-medium);
+        }
+
+        .card-header {
+          background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--bg-accent) 100%);
+          border-bottom: 1px solid var(--border-light);
+          color: var(--primary-navy);
+          font-weight: 600;
+        }
+
+        .card-body {
+          background: var(--bg-card);
+          padding: 2rem;
+        }
+
+        .btn-primary {
+          background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-rose-gold) 100%);
+          border: none;
+          border-radius: 8px;
+          padding: 0.75rem 2rem;
+          font-weight: 600;
+          color: white;
+          box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+          background: linear-gradient(135deg, var(--accent-rose-gold) 0%, var(--accent-gold) 100%);
+        }
+
+        .highlight-box {
+          background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--bg-accent) 100%);
+          border: 1px solid var(--accent-gold);
+          border-radius: 12px;
+          padding: 2rem;
+          margin: 2rem 0;
+          box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .social-links a {
+          color: var(--text-secondary);
+          font-size: 1.5rem;
+          margin: 0 1rem;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+
+        .social-links a:hover {
+          color: var(--accent-gold);
+          transform: translateY(-2px);
+          text-decoration: none;
+        }
+
+        footer {
+          background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
+          color: var(--text-light);
+          padding: 3rem 0;
+          margin-top: 4rem;
+          border-top: 4px solid var(--accent-gold);
+        }
+
+        footer a {
+          color: var(--accent-gold-light);
+          transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+          color: var(--accent-gold);
+          text-decoration: none;
+        }
+    </style>
 </head>
-<body {{ page.body_attr }}> {/* Removed bg-light, will be handled by global.css */}
-    {% include navbar.html %}
-    
-    <main role="main" class="page-content">
-        <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
-            {{content}}
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dr. Academic Name</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main" class="page-content" style="margin-top: 100px;">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Welcome to My Academic Profile</h1>
+                    <p>This is a test page demonstrating the new luxury color scheme for your academic website. The colors have been carefully selected to create a sophisticated, professional appearance while maintaining excellent readability.</p>
+                    
+                    <h2>Research Interests</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Featured Research</h3>
+                        <p>This highlighted section demonstrates the accent colors and styling used throughout the design. Notice the subtle gradient and golden accent border.</p>
+                    </div>
+                    
+                    <h3>Recent Publications</h3>
+                    <div class="card">
+                        <div class="card-header">
+                            Latest Paper (2024)
+                        </div>
+                        <div class="card-body">
+                            <p>"Advanced Research in Academic Excellence" - Journal of Academic Studies, Vol. 42, Issue 3</p>
+                            <button type="button" class="btn btn-primary">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Quick Links
+                        </div>
+                        <div class="card-body">
+                            <div class="social-links text-center">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-google-scholar"></i></a>
+                                <a href="#"><i class="fab fa-orcid"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            Contact Information
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Email:</strong> name@university.edu</p>
+                            <p><strong>Office:</strong> Building 123, Room 456</p>
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-    
-    {% include footer.html %}
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 Dr. Academic Name. All rights reserved.</p>
+                <p>Built with <a href="#">Academic Template</a></p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/github-buttons/2.14.2/buttons.min.js" integrity="sha512-OYwZx04hKFeFNYrWxIyo3atgGpb+cxU0ENWBZs72X7T9U+NoHPM1ftUn/Mfw7dRDXrqWA6M1wBg6z6fGE32aeA==" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body, {
-              delimiters: [
-                  {left: '$$', right: '$$', display: true},
-                  {left: '$', right: '$', display: false}
-              ],
-              throwOnError : false
-            });
-        });
-    </script>
-    <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/bubble_visual_hash.js' | relative_url }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 </body>
 </html>
