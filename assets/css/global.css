@@ -1,226 +1,328 @@
-/* assets/css/global.css */
+/* =================================
+   LUXURY ACADEMIC COLOR SCHEME
+   ================================= */
 
-/* --- Variables --- */
 :root {
-    --primary-font: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --heading-font: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    
-    --accent-color: #007bff; /* A vibrant blue, classic Bootstrap primary */
-    /* Alternative accent colors you might like:
-       --accent-color: #17a2b8; (Teal)
-       --accent-color: #6f42c1; (Purple)
-       --accent-color: #e83e8c; (Pink)
-       --accent-color: #0056b3; (Darker Blue for less brightness)
-    */
-    --accent-color-darker: #0056b3; /* For hover states */
-
-    --text-color: #343a40; /* Dark grey, not pure black */
-    --heading-color: #212529; /* Slightly darker for headings */
-    --link-color: var(--accent-color);
-    --link-hover-color: var(--accent-color-darker);
-    
-    --bg-color: #ffffff; /* White background */
-    --secondary-bg-color: #f8f9fa; /* Light grey for sections or cards */
-    
-    --border-color: #dee2e6;
-    --border-radius: 0.3rem; /* Slightly more rounded corners */
-    
-    --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
-    --shadow-md: 0 .5rem 1rem rgba(0,0,0,.1);
-    --shadow-lg: 0 1rem 3rem rgba(0,0,0,.125);
+  /* Primary Colors - Sophisticated Navy & Warm Whites */
+  --primary-navy: #2c3e50;
+  --primary-navy-light: #34495e;
+  --primary-navy-dark: #1a252f;
+  
+  /* Accent Colors - Elegant Golds & Warm Tones */
+  --accent-gold: #d4af37;
+  --accent-gold-light: #f4e4bc;
+  --accent-rose-gold: #e8b4a0;
+  --accent-sage: #9caf88;
+  
+  /* Background Colors - Soft & Luxurious */
+  --bg-primary: #fefefe;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f4f6f8;
+  --bg-card: #ffffff;
+  --bg-accent: #faf8f5;
+  
+  /* Text Colors - Readable & Elegant */
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #8e9aaf;
+  --text-light: #ffffff;
+  
+  /* Border & Divider Colors */
+  --border-light: #e8ecf0;
+  --border-medium: #d1d9e0;
+  --divider: #f0f4f7;
+  
+  /* Shadow Colors */
+  --shadow-soft: rgba(44, 62, 80, 0.08);
+  --shadow-medium: rgba(44, 62, 80, 0.12);
+  --shadow-strong: rgba(44, 62, 80, 0.16);
 }
 
-/* --- Base & Typography --- */
+/* =================================
+   GLOBAL STYLES
+   ================================= */
+
 body {
-    font-family: var(--primary-font);
-    font-size: 1rem; /* Base font size */
-    font-weight: 400;
-    line-height: 1.7; /* Improved readability */
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
 }
+
+/* =================================
+   NAVIGATION STYLES
+   ================================= */
+
+.navbar {
+  background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-accent) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 20px var(--shadow-soft);
+}
+
+.navbar-brand {
+  color: var(--primary-navy) !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--primary-navy) !important;
+  background: var(--accent-gold-light);
+  transform: translateY(-1px);
+}
+
+/* =================================
+   CONTAINER & LAYOUT STYLES
+   ================================= */
+
+.container-lg,
+.container {
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--shadow-soft);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 3rem 2rem;
+  border: 1px solid var(--border-light);
+}
+
+/* =================================
+   TYPOGRAPHY STYLES
+   ================================= */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
-    font-weight: 700; /* Bolder headings */
-    color: var(--heading-color);
-    margin-top: 1.5em;
-    margin-bottom: 0.75em;
-    line-height: 1.3;
+  color: var(--primary-navy);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
-h1 { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--accent-sage) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--primary-navy);
+  border-bottom: 3px solid var(--accent-gold-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: var(--primary-navy-light);
+}
 
 p {
-    margin-bottom: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
-}
-a:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
-}
+/* =================================
+   CARD & SECTION STYLES
+   ================================= */
 
-strong, b {
-    font-weight: 700; /* Raleway's bold */
-}
-
-/* --- Navbar --- */
-.navbar {
-    background-color: #fff !important; /* Override Bootstrap's light if set */
-    box-shadow: var(--shadow-sm);
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--border-color);
-}
-.navbar-brand {
-    font-family: var(--heading-font);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--heading-color) !important;
-}
-.navbar .nav-link {
-    font-family: var(--primary-font);
-    font-weight: 600; /* Slightly bolder nav links */
-    color: var(--text-color) !important;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-    color: var(--accent-color) !important;
-}
-
-/* --- Main Content Area --- */
-.page-content {
-    padding-top: 2rem; /* Space below navbar */
-    padding-bottom: 3rem; /* Space above footer */
-}
-.container-lg { /* Ensure content isn't too wide */
-    max-width: 992px; /* You can adjust this */
-}
-
-/* --- Sections --- */
-.content-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border-color);
-}
-.content-section:last-of-type {
-    border-bottom: none;
-}
-.section-title { /* For h2 used as section titles */
-    text-align: center;
-    margin-bottom: 2.5rem;
-    position: relative;
-}
-.section-title::after { /* Optional: add a little underline accent */
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 0.5rem auto 0;
-}
-
-/* --- Cards (for projects, publications, etc.) --- */
 .card {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    margin-bottom: 1.5rem; /* Bootstrap default is mb-3 */
-    background-color: #fff; /* Ensure cards are white if body bg is different */
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px var(--shadow-soft);
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
+
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px var(--shadow-medium);
 }
+
 .card-header {
-    background-color: var(--secondary-bg-color);
-    border-bottom: 1px solid var(--border-color);
-    font-family: var(--heading-font);
-    font-weight: 600;
-}
-.card-title {
-    font-family: var(--heading-font);
-    font-weight: 700;
-    color: var(--heading-color); /* Or var(--accent-color) if you prefer */
-    margin-bottom: 0.5rem;
-}
-.card-text {
-    font-size: 0.95rem; /* Slightly smaller text in cards */
-}
-.card-link, .card .btn {
-    font-weight: 600;
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--bg-accent) 100%);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--primary-navy);
+  font-weight: 600;
 }
 
-/* --- Buttons --- */
-.btn {
-    font-family: var(--primary-font);
-    font-weight: 600;
-    border-radius: var(--border-radius);
-    padding: 0.6rem 1.2rem;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+.card-body {
+  background: var(--bg-card);
+  padding: 2rem;
 }
+
+/* =================================
+   BUTTON STYLES
+   ================================= */
+
 .btn-primary {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: #fff;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-rose-gold) 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
 }
+
 .btn-primary:hover {
-    background-color: var(--accent-color-darker);
-    border-color: var(--accent-color-darker);
-    color: #fff;
-    box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, var(--accent-rose-gold) 0%, var(--accent-gold) 100%);
 }
+
 .btn-outline-primary {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
+  border: 2px solid var(--accent-gold);
+  color: var(--accent-gold);
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
 }
+
 .btn-outline-primary:hover {
-    background-color: var(--accent-color);
-    color: #fff;
+  background: var(--accent-gold);
+  color: white;
+  transform: translateY(-2px);
 }
 
-/* --- Footer --- */
-footer.fixed-bottom, footer { /* Target your footer appropriately */
-    background-color: var(--secondary-bg-color);
-    color: #6c757d; /* Bootstrap's text-muted color */
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    font-size: 0.9rem;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem; /* Ensure space if not fixed-bottom */
+/* =================================
+   LIST & CONTENT STYLES
+   ================================= */
+
+.list-group-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 1.25rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
+
+.list-group-item:hover {
+  background: var(--bg-accent);
+  transform: translateX(4px);
+}
+
+/* =================================
+   FOOTER STYLES
+   ================================= */
+
+footer {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
+  color: var(--text-light);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border-top: 4px solid var(--accent-gold);
+}
+
 footer a {
-    color: var(--text-color); /* Slightly darker links in footer */
-    font-weight: 500;
+  color: var(--accent-gold-light);
+  transition: color 0.3s ease;
 }
+
 footer a:hover {
-    color: var(--accent-color);
+  color: var(--accent-gold);
+  text-decoration: none;
 }
 
-/* --- Utility Classes (optional additions) --- */
-.text-accent {
-    color: var(--accent-color) !important;
+/* =================================
+   ACCENT ELEMENTS
+   ================================= */
+
+.badge-primary {
+  background: var(--accent-gold);
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
 }
 
-/* --- Responsive Adjustments --- */
+.badge-secondary {
+  background: var(--accent-sage);
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent-gold);
+  background: var(--bg-accent);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* =================================
+   SOCIAL LINKS & ICONS
+   ================================= */
+
+.social-links a {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+/* =================================
+   SPECIAL EFFECTS
+   ================================= */
+
+.highlight-box {
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--bg-accent) 100%);
+  border: 1px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+  margin: 3rem 0;
+}
+
+/* =================================
+   RESPONSIVE ADJUSTMENTS
+   ================================= */
+
 @media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    .section-title { margin-bottom: 1.5rem; }
-    .page-content { padding-top: 1rem; padding-bottom: 1.5rem; }
+  .container-lg,
+  .container {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
 }
