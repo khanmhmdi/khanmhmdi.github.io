@@ -1,10 +1,11 @@
+---
 title:          "InSureNet: A Graph Transformer Network Approach for Health Insurance Fraud Detection"
-date:           2025-01-01 00:01:00 +0000
+date:           2025-6-01 00:01:00 +0000
 selected:       true
 pub:            "IEEE COINS 2025 Conference"
-# pub_pre:        ""
-# pub_post:       ""
-pub_last:       ""
+# pub_pre:        "Submitted to "
+# pub_post:       'Under review.'
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2025"
 
 abstract: >- 
@@ -23,5 +24,4 @@ authors:
   - Aref Dorahaki
   - Mohamadreza Khanmohamadi
   - Bahar Farahani
-links:
-  # Code: https://github.com/example/insurenet # Replace with actual link if available
+---
