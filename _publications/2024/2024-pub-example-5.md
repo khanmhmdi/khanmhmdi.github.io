@@ -21,7 +21,9 @@ abstract: >-
   imbalance.
 cover:          /assets/images/covers/insure.jpg
 authors:
-  - Aref Dorahaki
   - Mohamadreza Khanmohamadi
-  - Bahar Farahani
+links:
+  Code: https://github.com/luost26/academic-homepage
+  Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
+
