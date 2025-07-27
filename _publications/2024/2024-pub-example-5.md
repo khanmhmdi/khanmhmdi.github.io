@@ -19,7 +19,7 @@ abstract: >-
   dataset, demonstrating that it outperforms state-of-the-arts. Specifically, InSureNet achieves an improvement of
   6% in F1-score and 17% in ROC-AUC, highlighting its ability to detect complex fraud scenarios under class
   imbalance.
-cover:          /assets/images/covers/insure-net.jpg
+cover:          /assets/images/covers/insure.jpg
 authors:
   - Aref Dorahaki
   - Mohamadreza Khanmohamadi
