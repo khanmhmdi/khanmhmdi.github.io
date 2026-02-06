@@ -43,4 +43,4 @@ collections:
     output: true
   experiments:
     output: true
-    permalink: /experiments/:name/
+    permalink: /experiments/:path/
