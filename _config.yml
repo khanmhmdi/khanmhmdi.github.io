@@ -35,6 +35,12 @@ plugins:
 # timezone: Asia/Shanghai
 
 collections:
-  - publications
-  - news
-  - showcase
+  publications:
+    output: true
+  news:
+    output: true
+  showcase:
+    output: true
+  experiments:
+    output: true
+    permalink: /experiments/:test/
